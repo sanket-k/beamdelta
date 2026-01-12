@@ -4,6 +4,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { NAV_ITEMS } from "@/lib/constants/navigation";
 import { cn } from "@/lib/utils";
+import { ThemeToggle } from "@/components/ui/theme-toggle";
 
 /**
  * Desktop top navigation bar with logo and section links.
@@ -19,7 +20,7 @@ export function DesktopTopNav() {
                 "fixed top-0 left-0 right-0 z-50",
                 "h-16 items-center justify-between px-6",
                 "backdrop-blur-xl bg-background/80",
-                "border-b border-white/10"
+                "border-b border-border"
             )}
         >
             {/* Logo */}
@@ -80,6 +81,7 @@ export function DesktopTopNav() {
                         </Link>
                     );
                 })}
+                <ThemeToggle className="ml-4" />
             </nav>
         </header>
     );
