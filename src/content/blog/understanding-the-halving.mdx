@@ -1,0 +1,106 @@
+---
+title: "Understanding the Bitcoin Halving"
+description: "A deep dive into Bitcoin's halving mechanism, its impact on inflation, and why it matters for the long-term value proposition of the world's first cryptocurrency."
+date: "2026-01-12"
+author: "SimLab Team"
+tags: ["Bitcoin", "Halving", "Inflation", "Monetary Policy"]
+featured: true
+---
+
+Every four years, something remarkable happens in the Bitcoin network: the **halving**. This programmed event cuts the rate at which new bitcoins are created in half, making it one of the most significant events in the cryptocurrency calendar.
+
+## What Is the Halving?
+
+The Bitcoin halving (sometimes called "halvening") is a scheduled reduction in the block reward—the number of new bitcoins miners receive for adding a new block to the blockchain. This happens approximately every **210,000 blocks**, or roughly every 4 years.
+
+<Callout type="info" title="The Numbers">
+  When Bitcoin launched in 2009, miners received **50 BTC** per block. After four halvings, the current reward is just **3.125 BTC** per block.
+</Callout>
+
+### Historical Halvings
+
+| Halving | Date | Block Height | Block Reward |
+|---------|------|--------------|--------------|
+| Genesis | Jan 2009 | 0 | 50 BTC |
+| 1st | Nov 2012 | 210,000 | 25 BTC |
+| 2nd | Jul 2016 | 420,000 | 12.5 BTC |
+| 3rd | May 2020 | 630,000 | 6.25 BTC |
+| 4th | Apr 2024 | 840,000 | 3.125 BTC |
+
+## Why Does the Halving Matter?
+
+The halving is central to Bitcoin's value proposition as "digital gold." Here's why:
+
+### 1. Controlled Supply
+
+Unlike fiat currencies that can be printed indefinitely, Bitcoin has a **hard cap of 21 million coins**. The halving ensures this supply is released gradually over ~140 years, with the last bitcoin expected to be mined around 2140.
+
+### 2. Decreasing Inflation
+
+Each halving dramatically reduces Bitcoin's inflation rate. Watch how the inflation rate drops at each halving event in the simulation below:
+
+<MiniSim 
+  type="bitcoin-inflation" 
+  title="Bitcoin Inflation Over Time"
+  config={{ blockReward: 50, halvingInterval: 210000, maxBlocks: 2100000 }}
+/>
+
+Try adjusting the **block reward** slider to see how different initial rewards would have affected Bitcoin's inflation curve.
+
+### 3. Stock-to-Flow Dynamics
+
+The halving affects Bitcoin's **stock-to-flow ratio**—a metric that compares existing supply (stock) to new production (flow). After each halving, this ratio doubles, theoretically increasing scarcity.
+
+<Callout type="tip" title="Try It Yourself">
+  Open the [full simulation](/sims/bitcoin/inflation) to experiment with different halving intervals and block rewards. What happens if halvings occurred every 100,000 blocks instead of 210,000?
+</Callout>
+
+## The Math Behind the Halving
+
+The block reward at any given block height `h` follows this formula:
+
+```
+reward(h) = initial_reward / 2^(floor(h / halving_interval))
+```
+
+For Bitcoin's parameters:
+- **Initial reward**: 50 BTC
+- **Halving interval**: 210,000 blocks
+
+At block 840,000 (the 4th halving):
+```
+reward(840000) = 50 / 2^(floor(840000 / 210000))
+               = 50 / 2^4
+               = 50 / 16
+               = 3.125 BTC
+```
+
+## Common Misconceptions
+
+<Callout type="warning" title="Myth Busting">
+  **"The halving will crash Bitcoin's price"** — While miner economics change, historical data shows halvings have typically preceded bull markets, not crashes.
+</Callout>
+
+### Does the Halving Affect Transaction Fees?
+
+Not directly. Transaction fees are determined by network demand, not the block reward. However, as block rewards diminish, fees are expected to become a larger portion of miner revenue.
+
+### When Will All Bitcoins Be Mined?
+
+The last bitcoin will be mined around the year **2140**. After this, miners will rely entirely on transaction fees for revenue.
+
+## What's Next?
+
+The 5th halving is expected in **2028**, reducing the block reward to just **1.5625 BTC**. By then, over 99% of all bitcoins will have already been mined.
+
+Understanding the halving is fundamental to understanding Bitcoin's monetary policy. Unlike central banks that make discretionary decisions about money supply, Bitcoin's issuance schedule is:
+
+- **Predetermined** — known in advance
+- **Immutable** — cannot be changed
+- **Verifiable** — visible on the blockchain
+
+This transparency and predictability is what makes Bitcoin unique among monetary systems.
+
+---
+
+*Want to explore more? Try our [Bitcoin Inflation Visualizer](/sims/bitcoin/inflation) to see exactly how supply and inflation evolve over time.*
