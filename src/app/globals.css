@@ -340,3 +340,151 @@
     opacity: 1;
   }
 }
+
+/* ============================================
+   Shine Button Effect
+   Premium CTA with animated gradient border
+   ============================================ */
+
+.shine-button {
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(135deg,
+      hsl(25 95% 53%) 0%,
+      hsl(25 95% 45%) 50%,
+      hsl(25 95% 53%) 100%);
+  background-size: 200% 200%;
+  animation: shine-gradient 3s ease-in-out infinite;
+}
+
+.shine-button::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg,
+      transparent 0%,
+      rgba(255, 255, 255, 0.3) 50%,
+      transparent 100%);
+  transform: translateX(-100%);
+  transition: transform var(--duration-normal) var(--ease-standard);
+}
+
+.shine-button:hover::before {
+  transform: translateX(100%);
+}
+
+@keyframes shine-gradient {
+
+  0%,
+  100% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+/* ============================================
+   Bento Grid Layout
+   Asymmetric card layout for homepage
+   ============================================ */
+
+.bento-grid {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: 1fr;
+}
+
+@media (min-width: 768px) {
+  .bento-grid {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: auto auto;
+  }
+
+  .bento-card-featured {
+    grid-column: 1;
+    grid-row: 1 / 3;
+  }
+}
+
+@media (min-width: 1024px) {
+  .bento-grid {
+    gap: 1.25rem;
+  }
+}
+
+/* ============================================
+   Bento Card Styles
+   Glassmorphic cards with hover effects
+   ============================================ */
+
+.bento-card {
+  position: relative;
+  border-radius: var(--radius-xl);
+  border: 1px solid var(--border);
+  background: var(--glass-bg);
+  backdrop-filter: blur(var(--glass-blur));
+  transition: all var(--duration-normal) var(--ease-standard);
+  overflow: hidden;
+}
+
+.bento-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at var(--mouse-x, 50%) var(--mouse-y, 50%),
+      hsl(25 95% 53% / 0.1) 0%,
+      transparent 50%);
+  opacity: 0;
+  transition: opacity var(--duration-fast) var(--ease-standard);
+  pointer-events: none;
+}
+
+.bento-card:hover {
+  border-color: hsl(25 95% 53% / 0.3);
+  transform: translateY(-2px);
+  box-shadow: 0 20px 40px -15px hsl(25 95% 53% / 0.15);
+}
+
+.bento-card:hover::before {
+  opacity: 1;
+}
+
+/* Light mode adjustments */
+.light .bento-card {
+  background: var(--glass-bg);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.light .bento-card:hover {
+  box-shadow: 0 20px 40px -15px hsl(25 95% 40% / 0.2);
+}
+
+/* ============================================
+   Live Mini Chart Animation
+   SVG curve drawing effect
+   ============================================ */
+
+.mini-chart-line {
+  stroke-dasharray: 300;
+  stroke-dashoffset: 300;
+  animation: draw-line 2s ease-out forwards;
+}
+
+@keyframes draw-line {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+.mini-chart-area {
+  opacity: 0;
+  animation: fade-in 0.5s ease-out 1.5s forwards;
+}
+
+@keyframes fade-in {
+  to {
+    opacity: 0.2;
+  }
+}
