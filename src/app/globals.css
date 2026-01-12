@@ -283,7 +283,7 @@
   --grid-color: hsl(217 91% 60% / 0.08);
   --grid-color-glow: hsl(217 91% 60% / 0.4);
   --grid-size: 40px;
-  --spotlight-size: 300px;
+  --spotlight-size: 400px;
 }
 
 /* Light mode adjustments */

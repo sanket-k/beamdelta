@@ -63,7 +63,7 @@ export function SpotlightGrid() {
     return (
         <div
             ref={containerRef}
-            className="spotlight-grid-container absolute inset-0 overflow-hidden"
+            className="spotlight-grid-container absolute -inset-[10%] overflow-hidden"
             style={
                 {
                     "--mouse-x": "50%",
