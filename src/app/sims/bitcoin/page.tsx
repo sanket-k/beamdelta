@@ -118,51 +118,50 @@ export default function BitcoinPage() {
 function SimulationCard({ simulation }: { simulation: Simulation }) {
     const isAvailable = simulation.status === "available";
 
-    const content = (
-        <div
-            className={`
-        group relative flex items-start gap-4 rounded-xl border border-border bg-card p-6
-        transition-all duration-[var(--duration-fast)]
-        ${isAvailable ? "hover:border-accent/50 hover:shadow-lg cursor-pointer" : "opacity-60"}
-      `}
+    return (
+        <Link
+            href={isAvailable ? simulation.href : "#"}
+            className={`block ${!isAvailable ? "pointer-events-none" : ""}`}
         >
-            {/* Icon */}
             <div
                 className={`
-          flex-shrink-0 h-12 w-12 rounded-lg flex items-center justify-center
-          ${isAvailable ? "bg-accent/10 text-accent" : "bg-muted text-muted-foreground"}
-          transition-transform duration-[var(--duration-fast)]
-          ${isAvailable ? "group-hover:scale-110" : ""}
-        `}
+                    group relative flex items-start gap-4 rounded-xl border border-border bg-card p-6
+                    transition-all duration-[var(--duration-fast)]
+                    ${isAvailable ? "hover:border-accent/50 hover:shadow-lg cursor-pointer" : "opacity-60 cursor-default"}
+                `}
             >
-                {simulation.icon}
-            </div>
-
-            {/* Content */}
-            <div className="flex-1 min-w-0">
-                <div className="flex items-center gap-2 mb-1">
-                    <h3 className="font-semibold">{simulation.title}</h3>
-                    {!isAvailable && (
-                        <span className="px-2 py-0.5 text-xs font-medium bg-muted rounded-full">
-                            Coming Soon
-                        </span>
-                    )}
+                {/* Icon */}
+                <div
+                    className={`
+                        flex-shrink-0 h-12 w-12 rounded-lg flex items-center justify-center
+                        ${isAvailable ? "bg-accent/10 text-accent" : "bg-muted text-muted-foreground"}
+                        transition-transform duration-[var(--duration-fast)]
+                        ${isAvailable ? "group-hover:scale-110" : ""}
+                    `}
+                >
+                    {simulation.icon}
                 </div>
-                <p className="text-sm text-muted-foreground">{simulation.description}</p>
+
+                {/* Content */}
+                <div className="flex-1 min-w-0">
+                    <div className="flex items-center gap-2 mb-1">
+                        <h3 className="font-semibold">{simulation.title}</h3>
+                        {!isAvailable && (
+                            <span className="px-2 py-0.5 text-xs font-medium bg-muted rounded-full">
+                                Coming Soon
+                            </span>
+                        )}
+                    </div>
+                    <p className="text-sm text-muted-foreground">{simulation.description}</p>
+                </div>
+
+                {/* Arrow */}
+                {isAvailable && (
+                    <span className="flex-shrink-0 text-accent opacity-0 group-hover:opacity-100 group-hover:translate-x-1 transition-all">
+                        →
+                    </span>
+                )}
             </div>
-
-            {/* Arrow */}
-            {isAvailable && (
-                <span className="flex-shrink-0 text-accent opacity-0 group-hover:opacity-100 group-hover:translate-x-1 transition-all">
-                    →
-                </span>
-            )}
-        </div>
+        </Link>
     );
-
-    if (isAvailable) {
-        return <Link href={simulation.href}>{content}</Link>;
-    }
-
-    return content;
 }

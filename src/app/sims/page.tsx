@@ -91,57 +91,56 @@ export default function SimsPage() {
 }
 
 function CategoryCard({ category }: { category: SimCategory }) {
-    const content = (
-        <div
-            className={`
-        group relative rounded-xl border border-border bg-card p-6
-        transition-all duration-[var(--duration-fast)]
-        ${category.available
-                    ? "hover:border-accent/50 hover:shadow-lg hover:shadow-accent/5 cursor-pointer"
-                    : "opacity-60"
-                }
-      `}
+    return (
+        <Link
+            href={category.available ? category.href : "#"}
+            className={`block ${!category.available ? "pointer-events-none" : ""}`}
         >
-            {/* Coming Soon Badge */}
-            {!category.available && (
-                <div className="absolute top-4 right-4 px-2 py-1 text-xs font-medium bg-muted rounded-full">
-                    Coming Soon
-                </div>
-            )}
-
-            {/* Icon */}
             <div
                 className={`
-          mb-4 inline-flex h-14 w-14 items-center justify-center rounded-xl
-          ${category.available ? "bg-accent/10 text-accent" : "bg-muted text-muted-foreground"}
-          transition-transform duration-[var(--duration-fast)]
-          ${category.available ? "group-hover:scale-110" : ""}
-        `}
+                    group relative rounded-xl border border-border bg-card p-6
+                    transition-all duration-[var(--duration-fast)]
+                    ${category.available
+                        ? "hover:border-accent/50 hover:shadow-lg hover:shadow-accent/5 cursor-pointer"
+                        : "opacity-60 cursor-default"
+                    }
+                `}
             >
-                {category.icon}
-            </div>
-
-            {/* Content */}
-            <h2 className="text-xl font-semibold mb-2">{category.title}</h2>
-            <p className="text-sm text-muted-foreground mb-4">{category.description}</p>
-
-            {/* Footer */}
-            <div className="flex items-center justify-between">
-                <span className="text-xs text-muted-foreground">
-                    {category.simCount} {category.simCount === 1 ? "simulation" : "simulations"}
-                </span>
-                {category.available && (
-                    <span className="text-sm font-medium text-accent group-hover:translate-x-1 transition-transform">
-                        Explore →
-                    </span>
+                {/* Coming Soon Badge */}
+                {!category.available && (
+                    <div className="absolute top-4 right-4 px-2 py-1 text-xs font-medium bg-muted rounded-full">
+                        Coming Soon
+                    </div>
                 )}
+
+                {/* Icon */}
+                <div
+                    className={`
+                        mb-4 inline-flex h-14 w-14 items-center justify-center rounded-xl
+                        ${category.available ? "bg-accent/10 text-accent" : "bg-muted text-muted-foreground"}
+                        transition-transform duration-[var(--duration-fast)]
+                        ${category.available ? "group-hover:scale-110" : ""}
+                    `}
+                >
+                    {category.icon}
+                </div>
+
+                {/* Content */}
+                <h2 className="text-xl font-semibold mb-2">{category.title}</h2>
+                <p className="text-sm text-muted-foreground mb-4">{category.description}</p>
+
+                {/* Footer */}
+                <div className="flex items-center justify-between">
+                    <span className="text-xs text-muted-foreground">
+                        {category.simCount} {category.simCount === 1 ? "simulation" : "simulations"}
+                    </span>
+                    {category.available && (
+                        <span className="text-sm font-medium text-accent group-hover:translate-x-1 transition-transform">
+                            Explore →
+                        </span>
+                    )}
+                </div>
             </div>
-        </div>
+        </Link>
     );
-
-    if (category.available) {
-        return <Link href={category.href}>{content}</Link>;
-    }
-
-    return content;
 }
