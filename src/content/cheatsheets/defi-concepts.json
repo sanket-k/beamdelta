@@ -1,0 +1,176 @@
+{
+    "id": "defi-concepts",
+    "name": "DeFi Concepts",
+    "description": "Essential terminology for decentralized finance protocols and mechanisms",
+    "icon": "Landmark",
+    "subcategories": [
+        "Trading",
+        "Yield",
+        "Advanced"
+    ],
+    "terms": [
+        {
+            "id": "amm",
+            "term": "AMM",
+            "shortDefinition": "Automated Market Maker - algorithm-based liquidity and pricing",
+            "fullDefinition": "An Automated Market Maker replaces traditional order books with smart contracts that hold liquidity pools. Prices are determined algorithmically (often x*y=k formula). Users trade against the pool, not other users. Popular AMMs include Uniswap, Curve, and Balancer. AMMs enable 24/7 trading without centralized intermediaries.",
+            "category": "defi-concepts",
+            "subcategory": "Trading",
+            "codeExample": "x * y = k  // constant product formula",
+            "tags": [
+                "dex",
+                "liquidity",
+                "trading"
+            ]
+        },
+        {
+            "id": "dex",
+            "term": "DEX",
+            "shortDefinition": "Decentralized Exchange - non-custodial trading platform",
+            "fullDefinition": "A Decentralized Exchange allows peer-to-peer trading of cryptocurrencies without intermediaries. Users retain custody of their funds (via wallets) rather than depositing to a centralized entity. DEXs use smart contracts to execute trades. Examples: Uniswap (Ethereum), Raydium (Solana), PancakeSwap (BNB Chain).",
+            "category": "defi-concepts",
+            "subcategory": "Trading",
+            "tags": [
+                "exchange",
+                "non-custodial",
+                "trading"
+            ]
+        },
+        {
+            "id": "liquidity-pool",
+            "term": "Liquidity Pool",
+            "shortDefinition": "Smart contract holding paired tokens for trading",
+            "fullDefinition": "A liquidity pool is a smart contract containing reserves of two or more tokens (e.g., ETH/USDC). Liquidity providers (LPs) deposit tokens and receive LP tokens representing their share. Traders swap against the pool, paying fees that go to LPs. Pool size affects slippage—larger pools have less price impact per trade.",
+            "category": "defi-concepts",
+            "subcategory": "Trading",
+            "codeExample": "pool_share = lp_tokens / total_lp_tokens",
+            "tags": [
+                "amm",
+                "liquidity",
+                "lp"
+            ]
+        },
+        {
+            "id": "slippage",
+            "term": "Slippage",
+            "shortDefinition": "Price difference between expected and executed trade",
+            "fullDefinition": "Slippage occurs when a trade executes at a different price than expected. In AMMs, larger trades relative to pool size cause more slippage due to the constant product formula. Users set slippage tolerance (e.g., 0.5%) to limit acceptable deviation. High slippage indicates low liquidity or large trade size.",
+            "category": "defi-concepts",
+            "subcategory": "Trading",
+            "codeExample": "slippage = (executed_price - quoted_price) / quoted_price * 100%",
+            "tags": [
+                "trading",
+                "price impact",
+                "execution"
+            ]
+        },
+        {
+            "id": "twap",
+            "term": "TWAP",
+            "shortDefinition": "Time-Weighted Average Price over a period",
+            "fullDefinition": "TWAP (Time-Weighted Average Price) is the average price of an asset over a specific time window. It's used by oracles to provide manipulation-resistant price feeds and by traders to execute large orders gradually. Unlike VWAP, TWAP weights all time periods equally regardless of trading volume.",
+            "category": "defi-concepts",
+            "subcategory": "Trading",
+            "codeExample": "TWAP = Σ(price_at_time_t) / n",
+            "tags": [
+                "oracle",
+                "price",
+                "trading"
+            ]
+        },
+        {
+            "id": "yield-farming",
+            "term": "Yield Farming",
+            "shortDefinition": "Earning rewards by providing liquidity or staking",
+            "fullDefinition": "Yield farming is the practice of moving crypto assets between DeFi protocols to maximize returns. Farmers provide liquidity, stake tokens, or lend assets to earn trading fees, protocol rewards, and governance tokens. Yields can be high but come with risks: impermanent loss, smart contract bugs, and token depreciation.",
+            "category": "defi-concepts",
+            "subcategory": "Yield",
+            "tags": [
+                "liquidity",
+                "rewards",
+                "staking"
+            ]
+        },
+        {
+            "id": "impermanent-loss",
+            "term": "Impermanent Loss",
+            "shortDefinition": "Value loss from providing liquidity vs holding tokens",
+            "fullDefinition": "Impermanent loss occurs when the price ratio of pooled tokens changes from when you deposited. The AMM rebalances your position, leaving you with less value than if you had simply held. It's 'impermanent' because the loss only realizes when you withdraw. For a 2x price divergence, IL is about 5.7%.",
+            "category": "defi-concepts",
+            "subcategory": "Yield",
+            "codeExample": "IL = 2 * sqrt(price_ratio) / (1 + price_ratio) - 1",
+            "tags": [
+                "liquidity",
+                "risk",
+                "amm"
+            ]
+        },
+        {
+            "id": "apy-apr",
+            "term": "APY vs APR",
+            "shortDefinition": "Annual returns with vs without compounding",
+            "fullDefinition": "APR (Annual Percentage Rate) is simple interest without compounding. APY (Annual Percentage Yield) includes compound interest. If a protocol advertises 100% APR with daily compounding, the actual APY is ~171%. DeFi protocols often quote APY to appear more attractive. Check compounding frequency when comparing yields.",
+            "category": "defi-concepts",
+            "subcategory": "Yield",
+            "codeExample": "APY = (1 + APR/n)^n - 1  // n = compounding periods",
+            "tags": [
+                "interest",
+                "returns",
+                "comparison"
+            ]
+        },
+        {
+            "id": "flash-loan",
+            "term": "Flash Loan",
+            "shortDefinition": "Uncollateralized loan repaid within one transaction",
+            "fullDefinition": "A flash loan lets you borrow millions without collateral, as long as you repay within the same blockchain transaction. If not repaid, the entire transaction reverts as if it never happened. Used for arbitrage, collateral swaps, and liquidations. Flash loans have also been exploited in attacks on vulnerable protocols.",
+            "category": "defi-concepts",
+            "subcategory": "Advanced",
+            "codeExample": "borrow() → arbitrage() → repay()  // all in one tx",
+            "tags": [
+                "lending",
+                "atomic",
+                "arbitrage"
+            ]
+        },
+        {
+            "id": "tvl",
+            "term": "TVL",
+            "shortDefinition": "Total Value Locked - assets deposited in a protocol",
+            "fullDefinition": "TVL (Total Value Locked) measures the total USD value of crypto assets deposited in a DeFi protocol. It's a key metric for protocol size and trust. High TVL suggests user confidence, but beware of inflated numbers from incentivized deposits or double-counting across protocols. Check DeFiLlama for accurate TVL data.",
+            "category": "defi-concepts",
+            "subcategory": "Advanced",
+            "tags": [
+                "metrics",
+                "protocol",
+                "trust"
+            ]
+        },
+        {
+            "id": "oracle",
+            "term": "Oracle",
+            "shortDefinition": "External data feed for smart contracts",
+            "fullDefinition": "An oracle bridges off-chain data (prices, weather, sports scores) to on-chain smart contracts. Price oracles like Chainlink and Pyth are critical for DeFi—they enable lending liquidations, derivatives, and stablecoin pegs. Oracle manipulation is a common attack vector; robust protocols use TWAP and multiple sources.",
+            "category": "defi-concepts",
+            "subcategory": "Advanced",
+            "tags": [
+                "data",
+                "chainlink",
+                "price feed"
+            ]
+        },
+        {
+            "id": "governance-token",
+            "term": "Governance Token",
+            "shortDefinition": "Token granting voting rights in protocol decisions",
+            "fullDefinition": "Governance tokens give holders voting power over protocol parameters: fee structures, treasury spending, upgrades, and more. Examples: UNI (Uniswap), AAVE, and COMP. Some protocols require token lockup (veToken model) to vote. Governance tokens may also capture protocol revenue through buybacks or staking rewards.",
+            "category": "defi-concepts",
+            "subcategory": "Advanced",
+            "tags": [
+                "dao",
+                "voting",
+                "protocol"
+            ]
+        }
+    ]
+}

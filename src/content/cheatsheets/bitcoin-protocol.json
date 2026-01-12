@@ -1,0 +1,196 @@
+{
+    "id": "bitcoin-protocol",
+    "name": "Bitcoin Protocol",
+    "description": "Core concepts of the Bitcoin blockchain, from mining to transactions",
+    "icon": "Bitcoin",
+    "subcategories": [
+        "Consensus",
+        "Transactions",
+        "Blocks"
+    ],
+    "terms": [
+        {
+            "id": "block-reward",
+            "term": "Block Reward",
+            "shortDefinition": "BTC given to miners for adding a valid block to the chain",
+            "fullDefinition": "The block reward is the amount of newly minted Bitcoin that a miner receives for successfully mining a block. It started at 50 BTC in 2009 and halves every 210,000 blocks. As of 2024, the reward is 3.125 BTC per block. This is the primary way new Bitcoin enters circulation.",
+            "category": "bitcoin-protocol",
+            "subcategory": "Consensus",
+            "codeExample": "reward = 50 / (2 ^ halvings)",
+            "relatedSimLink": "/sims/bitcoin/inflation",
+            "tags": [
+                "mining",
+                "issuance",
+                "monetary policy"
+            ]
+        },
+        {
+            "id": "halving",
+            "term": "Halving",
+            "shortDefinition": "Event where Bitcoin's block reward is cut by 50%",
+            "fullDefinition": "The Bitcoin halving occurs every 210,000 blocks (approximately 4 years). It reduces the mining reward by half, decreasing the rate of new BTC issuance. This deflationary mechanism ensures Bitcoin's total supply caps at 21 million. Past halvings: 2012 (50→25), 2016 (25→12.5), 2020 (12.5→6.25), 2024 (6.25→3.125).",
+            "category": "bitcoin-protocol",
+            "subcategory": "Consensus",
+            "codeExample": "halving_block = 210000 * n  // n = 1, 2, 3...",
+            "relatedSimLink": "/sims/bitcoin/inflation",
+            "tags": [
+                "scarcity",
+                "monetary policy",
+                "supply"
+            ]
+        },
+        {
+            "id": "difficulty-adjustment",
+            "term": "Difficulty Adjustment",
+            "shortDefinition": "Algorithm that keeps block time at ~10 minutes",
+            "fullDefinition": "Every 2,016 blocks (~2 weeks), Bitcoin's mining difficulty automatically adjusts based on total network hash power. If blocks are found faster than 10 minutes on average, difficulty increases; if slower, it decreases. This ensures consistent block production regardless of how much mining power joins or leaves the network.",
+            "category": "bitcoin-protocol",
+            "subcategory": "Consensus",
+            "codeExample": "new_difficulty = old_difficulty * (2016 * 10 min / actual_time)",
+            "tags": [
+                "mining",
+                "hash rate",
+                "consensus"
+            ]
+        },
+        {
+            "id": "proof-of-work",
+            "term": "Proof of Work (PoW)",
+            "shortDefinition": "Consensus mechanism requiring computational work to validate blocks",
+            "fullDefinition": "Proof of Work requires miners to find a hash below a target difficulty by brute-force guessing nonces. This computational puzzle ensures that creating new blocks requires real energy expenditure, making attacks economically infeasible. The miner who solves it first gets to add the block and claim the reward.",
+            "category": "bitcoin-protocol",
+            "subcategory": "Consensus",
+            "codeExample": "SHA256(SHA256(block_header)) < target",
+            "tags": [
+                "mining",
+                "security",
+                "consensus"
+            ]
+        },
+        {
+            "id": "utxo",
+            "term": "UTXO",
+            "shortDefinition": "Unspent Transaction Output - spendable Bitcoin balance",
+            "fullDefinition": "A UTXO (Unspent Transaction Output) represents Bitcoin that has been received but not yet spent. Unlike account-based systems, Bitcoin tracks ownership through UTXOs. When you 'spend' Bitcoin, you consume entire UTXOs and create new ones. Your wallet balance is the sum of all UTXOs you control.",
+            "category": "bitcoin-protocol",
+            "subcategory": "Transactions",
+            "codeExample": "balance = sum(utxos_controlled_by_pubkey)",
+            "tags": [
+                "transactions",
+                "accounting",
+                "ownership"
+            ]
+        },
+        {
+            "id": "coinbase-transaction",
+            "term": "Coinbase Transaction",
+            "shortDefinition": "First transaction in a block that creates new Bitcoin",
+            "fullDefinition": "The coinbase transaction is the first transaction in every block. It has no inputs (unlike regular transactions) and creates new Bitcoin as the block reward plus all transaction fees. This is the only way new Bitcoin is created. Miners can include arbitrary data in the coinbase (famously, Satoshi's genesis block message).",
+            "category": "bitcoin-protocol",
+            "subcategory": "Transactions",
+            "codeExample": "output = block_reward + sum(tx_fees)",
+            "tags": [
+                "mining",
+                "block reward",
+                "issuance"
+            ]
+        },
+        {
+            "id": "segwit",
+            "term": "SegWit",
+            "shortDefinition": "Upgrade that separates signature data for more capacity",
+            "fullDefinition": "Segregated Witness (SegWit) is a 2017 protocol upgrade that moves signature (witness) data outside the main transaction. This fixes transaction malleability and effectively increases block capacity to ~4MB. SegWit addresses start with 'bc1' (bech32 format) and offer lower transaction fees.",
+            "category": "bitcoin-protocol",
+            "subcategory": "Transactions",
+            "codeExample": "block_weight = base_size * 3 + total_size  // max 4M weight units",
+            "tags": [
+                "scaling",
+                "upgrade",
+                "transactions"
+            ]
+        },
+        {
+            "id": "mempool",
+            "term": "Mempool",
+            "shortDefinition": "Waiting room for unconfirmed transactions",
+            "fullDefinition": "The mempool (memory pool) is where valid but unconfirmed transactions wait before being included in a block. Miners prioritize transactions with higher fee rates (sat/vB). During network congestion, the mempool grows large and low-fee transactions may wait hours or days for confirmation.",
+            "category": "bitcoin-protocol",
+            "subcategory": "Transactions",
+            "tags": [
+                "transactions",
+                "fees",
+                "confirmation"
+            ]
+        },
+        {
+            "id": "nonce",
+            "term": "Nonce",
+            "shortDefinition": "Random number miners change to find a valid block hash",
+            "fullDefinition": "The nonce is a 32-bit field in the block header that miners increment to produce different hash outputs. Combined with the extra nonce in the coinbase transaction, miners try billions of combinations per second until finding a hash below the target difficulty. The winning nonce proves the miner did the computational work.",
+            "category": "bitcoin-protocol",
+            "subcategory": "Blocks",
+            "codeExample": "while SHA256(header_with_nonce) > target:\n    nonce += 1",
+            "tags": [
+                "mining",
+                "proof of work",
+                "hashing"
+            ]
+        },
+        {
+            "id": "merkle-root",
+            "term": "Merkle Root",
+            "shortDefinition": "Single hash summarizing all transactions in a block",
+            "fullDefinition": "A Merkle root is a cryptographic hash created by repeatedly hashing pairs of transaction hashes until one root hash remains. It's stored in the block header and allows efficient verification that any transaction is included in the block (Merkle proof) without downloading the entire block. This enables SPV wallets.",
+            "category": "bitcoin-protocol",
+            "subcategory": "Blocks",
+            "codeExample": "root = hash(hash(txA, txB), hash(txC, txD))",
+            "tags": [
+                "cryptography",
+                "verification",
+                "SPV"
+            ]
+        },
+        {
+            "id": "block-height",
+            "term": "Block Height",
+            "shortDefinition": "Sequential number of a block in the chain",
+            "fullDefinition": "Block height is the count of blocks from the genesis block (height 0) to the current block. It's a unique identifier for each block in the main chain. As of 2024, Bitcoin's block height has surpassed 800,000. Height is used to determine halving events (every 210,000 blocks) and difficulty adjustments (every 2,016 blocks).",
+            "category": "bitcoin-protocol",
+            "subcategory": "Blocks",
+            "relatedSimLink": "/sims/bitcoin/inflation",
+            "tags": [
+                "blockchain",
+                "indexing",
+                "history"
+            ]
+        },
+        {
+            "id": "genesis-block",
+            "term": "Genesis Block",
+            "shortDefinition": "The first Bitcoin block mined by Satoshi Nakamoto",
+            "fullDefinition": "Block 0, the genesis block, was mined on January 3, 2009 by Satoshi Nakamoto. It contains the famous message: 'The Times 03/Jan/2009 Chancellor on brink of second bailout for banks.' The genesis block's reward of 50 BTC is unspendable due to a quirk in the original code.",
+            "category": "bitcoin-protocol",
+            "subcategory": "Blocks",
+            "codeExample": "hash: 000000000019d6689c085ae165831e934ff763ae46a2a6c172b3f1b60a8ce26f",
+            "tags": [
+                "history",
+                "satoshi",
+                "origin"
+            ]
+        },
+        {
+            "id": "hash-rate",
+            "term": "Hash Rate",
+            "shortDefinition": "Total computational power securing the network",
+            "fullDefinition": "Hash rate measures the total number of SHA-256 hash computations the Bitcoin network performs per second. Higher hash rate means more security, as it becomes exponentially harder to attack. In 2024, the network exceeds 500 exahashes per second (EH/s) — that's 500 quintillion hashes every second.",
+            "category": "bitcoin-protocol",
+            "subcategory": "Blocks",
+            "codeExample": "1 EH/s = 10^18 hashes/second",
+            "tags": [
+                "mining",
+                "security",
+                "network"
+            ]
+        }
+    ]
+}

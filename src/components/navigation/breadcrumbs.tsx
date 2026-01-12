@@ -16,17 +16,18 @@ export interface BreadcrumbItemType {
 
 interface BreadcrumbsProps {
     items: BreadcrumbItemType[];
+    className?: string;
 }
 
 /**
  * Accessible breadcrumb navigation using shadcn/ui primitives.
  * Last item renders as current page (no link).
  */
-export function Breadcrumbs({ items }: BreadcrumbsProps) {
+export function Breadcrumbs({ items, className }: BreadcrumbsProps) {
     if (items.length === 0) return null;
 
     return (
-        <Breadcrumb>
+        <Breadcrumb className={className}>
             <BreadcrumbList>
                 {items.map((item, index) => {
                     const isLast = index === items.length - 1;
