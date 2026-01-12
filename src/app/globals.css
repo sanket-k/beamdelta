@@ -273,3 +273,70 @@
     transform: translateX(100%);
   }
 }
+
+/* ============================================
+   Spotlight Grid Effect (Homepage)
+   Linear/Vercel-style mouse-reactive grid
+   ============================================ */
+
+.spotlight-grid-container {
+  --grid-color: hsl(217 91% 60% / 0.08);
+  --grid-color-glow: hsl(217 91% 60% / 0.4);
+  --grid-size: 40px;
+  --spotlight-size: 300px;
+}
+
+/* Light mode adjustments */
+.light .spotlight-grid-container {
+  --grid-color: hsl(217 91% 50% / 0.06);
+  --grid-color-glow: hsl(217 91% 50% / 0.35);
+}
+
+/* Base grid pattern - very subtle */
+.spotlight-grid {
+  background-image: linear-gradient(to right,
+      var(--grid-color) 1px,
+      transparent 1px),
+    linear-gradient(to bottom, var(--grid-color) 1px, transparent 1px);
+  background-size: var(--grid-size) var(--grid-size);
+}
+
+/* Spotlight glow - follows mouse on desktop */
+.spotlight-glow {
+  opacity: var(--spotlight-opacity, 0);
+  background: radial-gradient(circle var(--spotlight-size) at var(--mouse-x) var(--mouse-y),
+      var(--grid-color-glow),
+      transparent 70%);
+  transition: opacity var(--duration-normal) var(--ease-standard);
+  pointer-events: none;
+
+  /* Grid lines revealed in spotlight */
+  mask-image: radial-gradient(circle var(--spotlight-size) at var(--mouse-x) var(--mouse-y),
+      black,
+      transparent 70%);
+  -webkit-mask-image: radial-gradient(circle var(--spotlight-size) at var(--mouse-x) var(--mouse-y),
+      black,
+      transparent 70%);
+}
+
+/* Mobile: static center glow with pulse */
+.spotlight-glow-pulse {
+  --mouse-x: 50% !important;
+  --mouse-y: 50% !important;
+  opacity: 1 !important;
+  animation: spotlight-pulse 4s ease-in-out infinite;
+}
+
+@keyframes spotlight-pulse {
+
+  0%,
+  100% {
+    --spotlight-size: 200px;
+    opacity: 0.6;
+  }
+
+  50% {
+    --spotlight-size: 350px;
+    opacity: 1;
+  }
+}
