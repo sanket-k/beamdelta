@@ -16,6 +16,7 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://simlab.dev"),
   title: {
     default: "SimLab - Interactive Crypto Simulations",
     template: "%s | SimLab",
