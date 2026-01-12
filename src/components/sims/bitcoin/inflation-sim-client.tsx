@@ -93,7 +93,6 @@ export function InflationSimClient() {
                 max={limits.blockReward.max}
                 step={limits.blockReward.step}
                 formatValue={formatBTC}
-                unit="BTC"
                 onDragStart={handleDragStart}
                 onDragEnd={handleDragEnd}
             />
