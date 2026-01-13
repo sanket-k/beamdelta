@@ -8,7 +8,8 @@ import { cn } from "@/lib/utils";
 interface BentoCardProps {
     href: string;
     variant?: "featured" | "standard";
-    label: string;
+    label?: string; // Single label (backward compatibility)
+    labels?: string[]; // Multiple labels (takes priority if provided)
     title: string;
     description: string;
     children?: ReactNode;
@@ -24,6 +25,7 @@ export function BentoCard({
     href,
     variant = "standard",
     label,
+    labels,
     title,
     description,
     children,
@@ -51,10 +53,25 @@ export function BentoCard({
                 variant === "standard" && "min-h-[140px]"
             )}
         >
-            {/* Label badge */}
-            <span className="mb-3 inline-flex w-fit items-center rounded-md bg-accent/10 px-2.5 py-1 text-xs font-medium text-accent ring-1 ring-accent/20">
-                {label}
-            </span>
+            {/* Label badge(s) */}
+            <div className="mb-3 flex flex-wrap gap-2">
+                {labels ? (
+                    // Multiple labels
+                    labels.map((l, i) => (
+                        <span
+                            key={i}
+                            className="inline-flex items-center rounded-md bg-accent/10 px-2.5 py-1 text-xs font-medium text-accent ring-1 ring-accent/20"
+                        >
+                            {l}
+                        </span>
+                    ))
+                ) : label ? (
+                    // Single label (backward compatibility)
+                    <span className="inline-flex items-center rounded-md bg-accent/10 px-2.5 py-1 text-xs font-medium text-accent ring-1 ring-accent/20">
+                        {label}
+                    </span>
+                ) : null}
+            </div>
 
             {/* Title */}
             <h3 className="mb-2 text-xl font-semibold text-foreground md:text-2xl">

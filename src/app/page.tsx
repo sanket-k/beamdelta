@@ -71,7 +71,7 @@ export default function Home() {
           <BentoCard
             href="/cheatsheets"
             variant="standard"
-            label="Knowledge Base"
+            labels={["Knowledge Base", "Cheatsheets"]}
             title="Reference"
             description="Protocol definitions, opcode gas costs, and formulas."
             action="Browse Library"
