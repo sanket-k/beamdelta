@@ -113,12 +113,12 @@ export default function AboutPage() {
                         ))}
                     </div>
 
-                    {/* Roles */}
+                    {/* Roles
                     <p className="mt-6 text-sm text-foreground-muted">
                         Open to <span className="text-accent">DevRel</span>,{" "}
                         <span className="text-accent">Product Engineering</span>, and{" "}
                         <span className="text-accent">Educator</span> opportunities.
-                    </p>
+                    </p> */}
                 </section>
             </div>
         </ResponsiveLayout>
