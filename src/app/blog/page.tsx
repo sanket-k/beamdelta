@@ -5,11 +5,11 @@ import { ResponsiveLayout } from "@/components/layout/responsive-layout";
 import { BookOpen } from "lucide-react";
 
 export const metadata: Metadata = {
-    title: "Blog | SimLab",
+    title: "Blog | BeamDelta",
     description:
         "Deep dives into Bitcoin, crypto economics, and blockchain mechanics. Learn through interactive simulations and clear explanations.",
     openGraph: {
-        title: "Blog | SimLab",
+        title: "Blog | BeamDelta",
         description:
             "Deep dives into Bitcoin, crypto economics, and blockchain mechanics.",
         type: "website",

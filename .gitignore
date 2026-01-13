@@ -43,6 +43,5 @@ next-env.d.ts
 # data
 /knowledge-hub
 docs/USER-GUIDE.md
-.gitignore
 CONTRIBUTING.md
-todo.md
+# todo.md

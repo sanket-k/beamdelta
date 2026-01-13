@@ -16,10 +16,10 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://simlab.dev"),
+  metadataBase: new URL("https://beamdelta.dev"),
   title: {
-    default: "SimLab - Interactive Crypto Simulations",
-    template: "%s | SimLab",
+    default: "BeamDelta - Interactive Crypto Simulations",
+    template: "%s | BeamDelta",
   },
   description:
     "Master blockchain concepts through interactive visualizations. Explore Bitcoin inflation, halving events, and crypto economics.",
@@ -32,11 +32,11 @@ export const metadata: Metadata = {
     "blockchain",
     "visualization",
   ],
-  authors: [{ name: "SimLab" }],
+  authors: [{ name: "BeamDelta" }],
   openGraph: {
     type: "website",
     locale: "en_US",
-    siteName: "SimLab",
+    siteName: "BeamDelta",
   },
   twitter: {
     card: "summary_large_image",

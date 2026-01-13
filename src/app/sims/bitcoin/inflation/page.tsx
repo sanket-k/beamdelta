@@ -6,14 +6,14 @@ export const metadata: Metadata = {
     description:
         "Interactive visualization of Bitcoin's inflation rate and total supply over time. Explore how halving events shape Bitcoin's monetary policy.",
     openGraph: {
-        title: "Bitcoin Inflation Visualizer | SimLab",
+        title: "Bitcoin Inflation Visualizer | BeamDelta",
         description:
             "Interactive visualization of Bitcoin's inflation rate and total supply over time.",
         type: "website",
     },
     twitter: {
         card: "summary_large_image",
-        title: "Bitcoin Inflation Visualizer | SimLab",
+        title: "Bitcoin Inflation Visualizer | BeamDelta",
         description:
             "Interactive visualization of Bitcoin's inflation rate and total supply over time.",
     },

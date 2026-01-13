@@ -28,12 +28,12 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 
     if (!post) {
         return {
-            title: "Post Not Found | SimLab Blog",
+            title: "Post Not Found | BeamDelta Blog",
         };
     }
 
     return {
-        title: `${post.frontmatter.title} | SimLab Blog`,
+        title: `${post.frontmatter.title} | BeamDelta Blog`,
         description: post.frontmatter.description,
         authors: [{ name: post.frontmatter.author }],
         keywords: post.frontmatter.tags,

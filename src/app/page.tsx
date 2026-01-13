@@ -29,7 +29,7 @@ export default function Home() {
               </svg>
             </div>
             <h1 className="text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl">
-              The Simulation <span className="text-accent">Lab</span>
+              Beam <span className="text-accent">Delta</span>
             </h1>
           </div>
 

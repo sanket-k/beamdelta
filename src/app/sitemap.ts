@@ -5,7 +5,7 @@ import type { MetadataRoute } from "next";
  * Next.js automatically generates /sitemap.xml from this file
  */
 export default function sitemap(): MetadataRoute.Sitemap {
-    const baseUrl = "https://simlab.dev";
+    const baseUrl = "https://beamdelta.dev";
 
     // Static pages
     const staticPages: MetadataRoute.Sitemap = [

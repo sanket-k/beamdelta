@@ -3,8 +3,8 @@ import { ResponsiveLayout } from "@/components/layout/responsive-layout";
 import { Github, Twitter, Linkedin, ExternalLink } from "lucide-react";
 
 export const metadata: Metadata = {
-    title: "About | SimLab",
-    description: "The engineer behind SimLab - building interactive crypto simulations to bridge the gap between memes and whitepapers.",
+    title: "About | BeamDelta",
+    description: "The engineer behind BeamDelta - building interactive crypto simulations to bridge the gap between memes and whitepapers.",
 };
 
 const techStack = [
@@ -50,7 +50,7 @@ export default function AboutPage() {
                     <div className="space-y-4 text-foreground-muted">
                         <p>
                             Most people learn crypto through two extremes: <em>oversimplified memes</em> or{" "}
-                            <em>dense academic papers</em>. SimLab aims to fill the middle ground.
+                            <em>dense academic papers</em>. BeamDelta aims to fill the middle ground.
                         </p>
                         <p>
                             My goal is to let you <strong className="text-foreground">&quot;play&quot; with the variables</strong> so

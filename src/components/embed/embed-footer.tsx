@@ -10,7 +10,7 @@ interface EmbedFooterProps {
 
 /**
  * Attribution footer for embedded charts.
- * Provides a "Powered by SimLab" link back to the source.
+ * Provides a "Powered by BeamDelta" link back to the source.
  */
 export function EmbedFooter({ sourceUrl, className }: EmbedFooterProps) {
     return (
@@ -29,7 +29,7 @@ export function EmbedFooter({ sourceUrl, className }: EmbedFooterProps) {
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-1 font-medium text-accent hover:text-accent/80 transition-colors"
             >
-                SimLab
+                BeamDelta
                 <ExternalLink className="h-3 w-3" />
             </a>
         </footer>

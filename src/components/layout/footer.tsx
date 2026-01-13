@@ -25,7 +25,7 @@ export function Footer({ className }: FooterProps) {
                 <p>
                     © {currentYear}{" "}
                     <Link href="/" className="hover:text-foreground transition-colors">
-                        SimLab
+                        BeamDelta
                     </Link>
                     . All rights reserved.
                 </p>

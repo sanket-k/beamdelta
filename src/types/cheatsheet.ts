@@ -1,5 +1,5 @@
 /**
- * Cheatsheet types for SimLab
+ * Cheatsheet types for BeamDelta
  * Defines the structure for crypto terminology cheat sheets
  */
 

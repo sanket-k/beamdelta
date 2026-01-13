@@ -3,8 +3,8 @@ import { Providers } from "@/components/providers";
 import "@/app/globals.css";
 
 export const metadata: Metadata = {
-    title: "SimLab Embed",
-    description: "Embeddable SimLab chart",
+    title: "BeamDelta Embed",
+    description: "Embeddable BeamDelta chart",
     robots: "noindex, nofollow",
 };
 

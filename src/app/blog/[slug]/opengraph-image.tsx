@@ -1,7 +1,7 @@
 import { ImageResponse } from "next/og";
 
 export const runtime = "edge";
-export const alt = "SimLab Blog";
+export const alt = "BeamDelta Blog";
 export const size = {
     width: 1200,
     height: 630,
@@ -13,7 +13,7 @@ const postData: Record<string, { title: string; description: string; author: str
     "understanding-the-halving": {
         title: "Understanding the Bitcoin Halving",
         description: "A deep dive into Bitcoin's halving mechanism, its impact on inflation, and why it matters.",
-        author: "SimLab Team",
+        author: "BeamDelta Team",
         date: "2026-01-12",
         tags: ["Bitcoin", "Halving", "Inflation", "Monetary Policy"],
     },
@@ -30,9 +30,9 @@ export default async function Image({
 }) {
     const { slug } = await params;
     const post = postData[slug] || {
-        title: "SimLab Blog",
+        title: "BeamDelta Blog",
         description: "Deep dives into crypto economics and blockchain mechanics.",
-        author: "SimLab Team",
+        author: "BeamDelta Team",
         date: new Date().toISOString().split("T")[0],
         tags: [],
     };
@@ -101,7 +101,7 @@ export default async function Image({
                         </svg>
                     </div>
                     <span style={{ fontSize: "24px", fontWeight: "bold", color: "#fafafa" }}>
-                        Sim<span style={{ color: "#f7931a" }}>Lab</span>
+                        Beam<span style={{ color: "#f7931a" }}>Delta</span>
                         <span style={{ color: "#a3a3a3", fontWeight: "normal" }}> / Blog</span>
                     </span>
                 </div>

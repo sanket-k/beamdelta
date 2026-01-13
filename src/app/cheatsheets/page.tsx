@@ -8,7 +8,7 @@ import bitcoinProtocol from "@/content/cheatsheets/bitcoin-protocol.json";
 import defiConcepts from "@/content/cheatsheets/defi-concepts.json";
 
 export const metadata: Metadata = {
-    title: "Crypto Cheatsheets | SimLab",
+    title: "Crypto Cheatsheets | BeamDelta",
     description:
         "Quick reference glossaries for Bitcoin protocol terms and DeFi concepts. Learn crypto terminology with interactive definitions and examples.",
     keywords: [
@@ -19,7 +19,7 @@ export const metadata: Metadata = {
         "crypto education",
     ],
     openGraph: {
-        title: "Crypto Cheatsheets | SimLab",
+        title: "Crypto Cheatsheets | BeamDelta",
         description:
             "Quick reference glossaries for Bitcoin protocol terms and DeFi concepts.",
     },

@@ -39,7 +39,7 @@ export function DesktopTopNav() {
                     </svg>
                 </div>
                 <span className="text-lg font-bold tracking-tight">
-                    Sim<span className="text-accent">Lab</span>
+                    Beam<span className="text-accent">Delta</span>
                 </span>
             </Link>
 

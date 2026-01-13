@@ -1,7 +1,7 @@
 import { ImageResponse } from "next/og";
 
 export const runtime = "edge";
-export const alt = "About SimLab - The Engineer Behind the Screen";
+export const alt = "About BeamDelta - The Engineer Behind the Screen";
 export const size = {
     width: 1200,
     height: 630,
@@ -75,7 +75,7 @@ export default async function Image() {
                             color: "#fafafa",
                         }}
                     >
-                        Sim<span style={{ color: "#f7931a" }}>Lab</span>
+                        Beam<span style={{ color: "#f7931a" }}>Delta</span>
                     </span>
                 </div>
 

@@ -39,7 +39,7 @@ export function EmbedModal({ embedPath, currentParams = {}, className }: EmbedMo
     // Build embed URL
     const baseUrl = typeof window !== "undefined"
         ? window.location.origin
-        : "https://simlab.dev";
+        : "https://beamdelta.dev";
 
     const embedUrl = (() => {
         const url = new URL(embedPath, baseUrl);
@@ -155,7 +155,7 @@ export function EmbedModal({ embedPath, currentParams = {}, className }: EmbedMo
 
                     {/* Note */}
                     <p className="text-xs text-muted-foreground text-center">
-                        The embed includes a "Powered by SimLab" attribution link.
+                        The embed includes a "Powered by BeamDelta" attribution link.
                     </p>
                 </div>
             </DialogContent>

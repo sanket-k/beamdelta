@@ -86,7 +86,7 @@ export default async function Image({
                             color: "#fafafa",
                         }}
                     >
-                        Sim<span style={{ color: "#f7931a" }}>Lab</span>
+                        Beam<span style={{ color: "#f7931a" }}>Delta</span>
                     </span>
                 </div>
 

@@ -23,7 +23,7 @@ const categoryMeta: Record<
     { title: string; description: string; keywords: string[] }
 > = {
     "bitcoin-protocol": {
-        title: "Bitcoin Protocol Terms | Cheatsheet | SimLab",
+        title: "Bitcoin Protocol Terms | Cheatsheet | BeamDelta",
         description:
             "Learn Bitcoin protocol terminology: halving, block reward, UTXO, nonce, merkle root, and more. Interactive definitions with code examples.",
         keywords: [
@@ -36,7 +36,7 @@ const categoryMeta: Record<
         ],
     },
     "defi-concepts": {
-        title: "DeFi Glossary | Cheatsheet | SimLab",
+        title: "DeFi Glossary | Cheatsheet | BeamDelta",
         description:
             "Master DeFi terminology: AMM, liquidity pools, impermanent loss, yield farming, flash loans, and more. Interactive definitions with formulas.",
         keywords: [
@@ -56,7 +56,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 
     if (!meta) {
         return {
-            title: "Cheatsheet Not Found | SimLab",
+            title: "Cheatsheet Not Found | BeamDelta",
         };
     }
 
