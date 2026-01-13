@@ -1,5 +1,6 @@
 import { type ReactNode } from "react";
 import { Breadcrumbs } from "@/components/navigation/breadcrumbs";
+import { EmbedModal } from "@/components/embed/embed-modal";
 import { cn } from "@/lib/utils";
 
 interface BreadcrumbItem {
@@ -16,6 +17,10 @@ interface SimContainerProps {
     breadcrumbs?: BreadcrumbItem[];
     /** Main content */
     children: ReactNode;
+    /** Path to embed route (enables embed button) */
+    embedPath?: string;
+    /** Current params to pass to embed */
+    embedParams?: Record<string, string | number>;
     /** Additional className */
     className?: string;
 }
@@ -29,6 +34,8 @@ export function SimContainer({
     description,
     breadcrumbs,
     children,
+    embedPath,
+    embedParams,
     className,
 }: SimContainerProps) {
     return (
@@ -39,14 +46,24 @@ export function SimContainer({
                     <Breadcrumbs items={breadcrumbs} />
                 )}
 
-                <div className="space-y-2">
-                    <h1 className="text-2xl font-bold tracking-tight sm:text-3xl">
-                        {title}
-                    </h1>
-                    {description && (
-                        <p className="text-base text-muted-foreground max-w-2xl">
-                            {description}
-                        </p>
+                <div className="flex items-start justify-between gap-4">
+                    <div className="space-y-2">
+                        <h1 className="text-2xl font-bold tracking-tight sm:text-3xl">
+                            {title}
+                        </h1>
+                        {description && (
+                            <p className="text-base text-muted-foreground max-w-2xl">
+                                {description}
+                            </p>
+                        )}
+                    </div>
+
+                    {/* Embed Button */}
+                    {embedPath && (
+                        <EmbedModal
+                            embedPath={embedPath}
+                            currentParams={embedParams}
+                        />
                     )}
                 </div>
             </header>
@@ -56,3 +73,4 @@ export function SimContainer({
         </div>
     );
 }
+

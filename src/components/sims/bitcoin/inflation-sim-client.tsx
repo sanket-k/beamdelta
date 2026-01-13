@@ -157,6 +157,12 @@ export function InflationSimClient() {
                     { label: "Bitcoin", href: "/sims/bitcoin" },
                     { label: "Inflation" },
                 ]}
+                embedPath="/embed/bitcoin/inflation"
+                embedParams={{
+                    reward: params.blockReward,
+                    halving: params.halvingInterval,
+                    blocks: params.maxBlocks,
+                }}
             >
                 {/* Main Chart */}
                 <InflationChart

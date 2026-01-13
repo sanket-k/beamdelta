@@ -40,7 +40,7 @@ export function SourceAccordion({
         >
             <AccordionItem
                 value="source"
-                className="rounded-xl border border-border bg-card px-4 sm:px-6"
+                className="rounded-xl border border-border bg-card px-4 sm:px-6 last:border-b"
             >
                 <AccordionTrigger className="hover:no-underline py-4">
                     <div className="flex items-center gap-3 text-left">
