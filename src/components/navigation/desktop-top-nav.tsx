@@ -30,17 +30,12 @@ export function DesktopTopNav() {
             >
                 <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-accent/10 ring-1 ring-accent/20">
                     <svg
-                        className="h-4 w-4 text-accent"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        stroke="currentColor"
-                        strokeWidth={2}
+                        className="h-6 w-6 text-accent"
+                        fill="currentColor"
+                        viewBox="-2 -4 24 24"
+                        xmlns="http://www.w3.org/2000/svg"
                     >
-                        <path
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            d="M13 10V3L4 14h7v7l9-11h-7z"
-                        />
+                        <path d="M10.528 2.358a1 1 0 0 0-1.377.32l-6.095 9.794A1 1 0 0 0 3.905 14h12.19a1 1 0 0 0 .85-1.528l-6.096-9.794a1 1 0 0 0-.32-.32zm2.019-.737l6.095 9.794A3 3 0 0 1 16.095 16H3.905a3 3 0 0 1-2.547-4.585L7.453 1.62a3 3 0 0 1 5.094 0z" />
                     </svg>
                 </div>
                 <span className="text-lg font-bold tracking-tight">

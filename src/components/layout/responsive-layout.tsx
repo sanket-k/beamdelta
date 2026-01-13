@@ -1,5 +1,6 @@
 import { type ReactNode } from "react";
 import { MobileBottomBar } from "@/components/navigation/mobile-bottom-bar";
+import { MobileHeader } from "@/components/navigation/mobile-header";
 import { DesktopTopNav } from "@/components/navigation/desktop-top-nav";
 import { DesktopSidebar } from "@/components/navigation/desktop-sidebar";
 import { cn } from "@/lib/utils";
@@ -17,7 +18,7 @@ interface ResponsiveLayoutProps {
 /**
  * Responsive layout wrapper that orchestrates navigation components.
  *
- * Mobile: Content + fixed bottom bar
+ * Mobile: Header + Content + fixed bottom bar
  * Desktop: Top nav + optional sidebar + content
  */
 export function ResponsiveLayout({
@@ -28,11 +29,14 @@ export function ResponsiveLayout({
 }: ResponsiveLayoutProps) {
     return (
         <div className="min-h-screen">
+            {/* Mobile Header */}
+            <MobileHeader />
+
             {/* Desktop Top Navigation */}
             <DesktopTopNav />
 
             {/* Main Layout */}
-            <div className="flex md:pt-16">
+            <div className="flex pt-14 md:pt-16">
                 {/* Desktop Sidebar (optional) */}
                 {showSidebar && <DesktopSidebar>{sidebarContent}</DesktopSidebar>}
 
@@ -55,3 +59,4 @@ export function ResponsiveLayout({
         </div>
     );
 }
+

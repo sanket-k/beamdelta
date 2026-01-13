@@ -37,10 +37,10 @@ export function SocialFooter() {
             {/* Copy */}
             <div className="max-w-md space-y-2">
                 <p className="text-sm text-foreground-muted">
-                    Built in public. I ship one new simulation every week.
+                    Built in public. I ship one new simulation/blog/cheatsheet every week.
                 </p>
                 <p className="text-sm font-medium text-foreground">
-                    Follow the engineering journey.
+                    Follow my engineering journey.
                 </p>
             </div>
 

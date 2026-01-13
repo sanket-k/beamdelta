@@ -1,4 +1,4 @@
-import { Home, Play, BookOpen, List, type LucideIcon } from "lucide-react";
+import { Home, Play, BookOpen, List, User, type LucideIcon } from "lucide-react";
 
 export interface NavItem {
     label: string;
@@ -14,4 +14,6 @@ export const NAV_ITEMS: NavItem[] = [
     { label: "Sims", href: "/sims", icon: Play },
     { label: "Blog", href: "/blog", icon: BookOpen },
     { label: "Cheatsheets", href: "/cheatsheets", icon: List },
+    { label: "About", href: "/about", icon: User },
 ] as const;
+

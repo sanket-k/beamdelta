@@ -4,7 +4,6 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { NAV_ITEMS } from "@/lib/constants/navigation";
 import { cn } from "@/lib/utils";
-import { ThemeToggle } from "@/components/ui/theme-toggle";
 
 /**
  * Mobile bottom navigation bar with glassmorphic styling.
@@ -56,7 +55,6 @@ export function MobileBottomBar() {
                         </Link>
                     );
                 })}
-                <ThemeToggle className="h-10 w-10" />
             </div>
         </nav>
     );
