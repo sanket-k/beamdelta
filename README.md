@@ -95,5 +95,5 @@ MIT License – see [LICENSE](./LICENSE) for details.
 ---
 
 <p align="center">
-  <strong>Built in public</strong> · Follow my journey on <a href="https://twitter.com/">Twitter/X</a>
+  <strong>Built in public</strong> · Follow my journey on <a href="https://x.com/0xsanketk">Twitter/X</a>
 </p>
