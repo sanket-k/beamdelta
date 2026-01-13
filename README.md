@@ -1,36 +1,99 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🧪 SimLab – The Simulation Lab
 
-## Getting Started
+> **Stop guessing. Touch the math.**
 
-First, run the development server:
+SimLab is an open-source interactive platform for financial and cryptographic simulations. Visualize complex concepts like Bitcoin's monetary policy through reactive, parameter-driven charts.
+
+[![Next.js](https://img.shields.io/badge/Next.js-16-black?logo=next.js)](https://nextjs.org/)
+[![TypeScript](https://img.shields.io/badge/TypeScript-5-blue?logo=typescript)](https://www.typescriptlang.org/)
+[![Tailwind CSS](https://img.shields.io/badge/Tailwind-4-38bdf8?logo=tailwindcss)](https://tailwindcss.com/)
+[![License](https://img.shields.io/badge/License-MIT-green)](#license)
+
+---
+
+## ✨ Features
+
+### 🔢 Interactive Simulations
+- **Bitcoin Inflation Visualizer** – Explore supply curves, halving events, and inflation rates with adjustable parameters
+- **Ghost Lines** – Compare scenarios by overlaying previous simulation states
+- **URL-Synced State** – Share exact configurations via URL (e.g., `?reward=25&interval=210000`)
+
+### 📚 Cheatsheets
+- Quick-reference cards for **Bitcoin Protocol**, **DeFi Concepts** and more.
+- Hover-to-reveal interactions.
+
+### 📝 Blog
+- Deep-dive articles with **embedded mini-simulations**
+- MDX-powered for rich content
+- Internal linking to related tools
+
+### 🎨 Modern Design
+- Dark mode default with light mode toggle
+- Glassmorphic UI components
+- Smooth micro-interactions and animations
+
+---
+
+## 🛠 Tech Stack
+
+| Layer | Technology |
+|-------|------------|
+| **Framework** | Next.js 16 (App Router) |
+| **Language** | TypeScript 5 |
+| **Styling** | Tailwind CSS 4 + shadcn/ui |
+| **State** | nuqs (URL query sync) |
+| **Charts** | Recharts 3 |
+| **Math** | Decimal.js |
+| **OG Images** | next/og |
+
+---
+
+## 🚀 Quick Start
 
 ```bash
+# 1. Clone the repository
+git clone https://github.com/YOUR_USERNAME/simulation.git
+cd simulation
+
+# 2. Install dependencies
+npm install
+
+# 3. Start the dev server
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) to see the app.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+---
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 📁 Project Structure
 
-## Learn More
+```
+simulation/
+├── src/
+│   ├── app/                  # Next.js App Router pages
+│   │   ├── sims/             # Simulation routes
+│   │   ├── blog/             # MDX blog posts
+│   │   └── cheatsheets/      # Quick reference pages
+│   ├── components/
+│   │   ├── ui/               # shadcn/ui components
+│   │   ├── sims/             # Simulation-specific components
+│   │   └── navigation/       # Nav components
+│   ├── lib/
+│   │   ├── math/             # Calculation logic
+│   │   └── hooks/            # Custom React hooks
+│   └── content/              # MDX + JSON content
+└── docs/                     # User guides
+```
 
-To learn more about Next.js, take a look at the following resources:
+---
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 📄 License
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+MIT License – see [LICENSE](./LICENSE) for details.
 
-## Deploy on Vercel
+---
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+<p align="center">
+  <strong>Built in public</strong> · Follow my journey on <a href="https://twitter.com/">Twitter/X</a>
+</p>
