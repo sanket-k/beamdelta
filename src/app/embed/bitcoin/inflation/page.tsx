@@ -14,7 +14,7 @@ export const metadata: Metadata = {
  */
 export default function EmbedBitcoinInflationPage() {
     // Base URL for attribution links
-    const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || "https://beamdelta.dev";
+    const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || "https://beamdelta.com";
 
     return (
         <Suspense fallback={<EmbedLoadingSkeleton />}>

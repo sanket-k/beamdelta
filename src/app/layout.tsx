@@ -16,7 +16,7 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://beamdelta.dev"),
+  metadataBase: new URL("https://beamdelta.com"),
   title: {
     default: "BeamDelta - Interactive Crypto Simulations",
     template: "%s | BeamDelta",

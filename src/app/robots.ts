@@ -11,6 +11,6 @@ export default function robots(): MetadataRoute.Robots {
             allow: "/",
             disallow: ["/api/", "/_next/"],
         },
-        sitemap: "https://beamdelta.dev/sitemap.xml",
+        sitemap: "https://beamdelta.com/sitemap.xml",
     };
 }

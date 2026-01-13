@@ -39,7 +39,7 @@ export function EmbedModal({ embedPath, currentParams = {}, className }: EmbedMo
     // Build embed URL
     const baseUrl = typeof window !== "undefined"
         ? window.location.origin
-        : "https://beamdelta.dev";
+        : "https://beamdelta.com";
 
     const embedUrl = (() => {
         const url = new URL(embedPath, baseUrl);
