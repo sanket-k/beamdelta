@@ -8,17 +8,17 @@ interface SocialLink {
 
 const socialLinks: SocialLink[] = [
     {
-        href: "https://github.com",
+        href: "https://github.com/sanket-k",
         label: "GitHub",
         icon: <Github className="h-5 w-5" />,
     },
     {
-        href: "https://twitter.com",
+        href: "https://x.com/0xsanketk",
         label: "X / Twitter",
         icon: <Twitter className="h-5 w-5" />,
     },
     {
-        href: "https://linkedin.com",
+        href: "https://www.linkedin.com/in/sanket-k/",
         label: "LinkedIn",
         icon: <Linkedin className="h-5 w-5" />,
     },

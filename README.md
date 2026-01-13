@@ -52,8 +52,8 @@ BeamDelta is an open-source interactive platform for financial and cryptographic
 
 ```bash
 # 1. Clone the repository
-git clone https://github.com/YOUR_USERNAME/simulation.git
-cd simulation
+git clone https://github.com/sanket-k/beamdelta.git
+cd beamdelta
 
 # 2. Install dependencies
 npm install
