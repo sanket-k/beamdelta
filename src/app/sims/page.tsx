@@ -76,7 +76,7 @@ export default function SimsPage() {
                     <p className="text-muted-foreground">
                         More simulations coming soon. Have a suggestion?{" "}
                         <a
-                            href="https://github.com"
+                            href="https://github.com/sanket-k/beamdelta/issues"
                             className="text-accent hover:underline"
                             target="_blank"
                             rel="noopener noreferrer"

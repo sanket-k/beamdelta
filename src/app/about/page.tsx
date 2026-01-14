@@ -19,9 +19,9 @@ const techStack = [
 ];
 
 const socialLinks = [
-    { href: "https://github.com", label: "GitHub", icon: Github },
-    { href: "https://twitter.com", label: "Twitter", icon: Twitter },
-    { href: "https://linkedin.com", label: "LinkedIn", icon: Linkedin },
+    { href: "https://github.com/sanket-k", label: "GitHub", icon: Github },
+    { href: "https://x.com/0xsanketk", label: "X / Twitter", icon: Twitter },
+    { href: "https://www.linkedin.com/in/sanket-k/", label: "LinkedIn", icon: Linkedin },
 ];
 
 export default function AboutPage() {
@@ -99,7 +99,7 @@ export default function AboutPage() {
                     </p> */}
 
                     {/* Social Links */}
-                    <div className="flex justify-center gap-3">
+                    {/* <div className="flex justify-center gap-3">
                         {socialLinks.map((link) => (
                             <a
                                 key={link.label}
@@ -111,7 +111,7 @@ export default function AboutPage() {
                                 <link.icon className="h-5 w-5" />
                             </a>
                         ))}
-                    </div>
+                    </div> */}
 
                     {/* Roles
                     <p className="mt-6 text-sm text-foreground-muted">

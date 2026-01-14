@@ -87,7 +87,7 @@ export default function Home() {
           <BentoCard
             href="/blog"
             variant="standard"
-            label="Deep Dives"
+            labels={["Deep Dives", "Blog", "Research"]}
             title="Research"
             description="Engineering breakdowns and market mechanics."
             action="Read Latest"
