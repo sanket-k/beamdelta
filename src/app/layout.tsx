@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Inter, JetBrains_Mono } from "next/font/google";
+import { Analytics } from "@vercel/analytics/next";
 import { Providers } from "@/components/providers";
 import { SocialFooter } from "@/components/home/social-footer";
 import "./globals.css";
@@ -58,6 +59,7 @@ export default function RootLayout({
           {children}
           <SocialFooter />
         </Providers>
+        <Analytics />
       </body>
     </html>
   );
