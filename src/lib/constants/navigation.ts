@@ -12,7 +12,7 @@ export interface NavItem {
 export const NAV_ITEMS: NavItem[] = [
     { label: "Home", href: "/", icon: Home },
     { label: "Simulations", href: "/sims", icon: Play },
-    { label: "Research", href: "/blog", icon: BookOpen },
+    { label: "Insights", href: "/blog", icon: BookOpen },
     { label: "Cheatsheets", href: "/cheatsheets", icon: List },
     { label: "About", href: "/about", icon: User },
 ] as const;
