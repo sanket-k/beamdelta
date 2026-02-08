@@ -34,7 +34,7 @@ export function ChartWrapper({
             </ResponsiveContainer>
 
             {/* Watermark */}
-            <div className="absolute inset-0 flex items-center justify-center z-0 pointer-events-none select-none opacity-[0.02]">
+            <div className="absolute inset-0 flex items-center justify-center z-0 pointer-events-none select-none opacity-[0.2] grayscale">
                 <div className="flex items-center gap-4 scale-150">
                     <div className="flex h-16 w-16 items-center justify-center rounded-2xl bg-accent/20 ring-2 ring-accent/30">
                         <svg
