@@ -1,4 +1,5 @@
 import { Metadata } from "next";
+import Image from "next/image";
 import { ResponsiveLayout } from "@/components/layout/responsive-layout";
 import { Github, Twitter, Linkedin, ExternalLink } from "lucide-react";
 
@@ -87,11 +88,39 @@ export default function AboutPage() {
 
                 {/* Section 3: Call to Connection */}
                 <section className="rounded-xl border border-border bg-card/50 p-6 text-center">
+                    <div className="mb-6 flex justify-center">
+                        <a
+                            href="https://x.com/0xsanketk"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="relative h-24 w-24 overflow-hidden rounded-full border-2 border-accent/20 transition-transform duration-300 hover:scale-105 hover:border-accent"
+                        >
+                            <Image
+                                src="/DP/dp2.png"
+                                alt="Sanket K"
+                                fill
+                                className="object-cover"
+                                sizes="(max-width: 768px) 96px, 96px"
+                            />
+                        </a>
+                    </div>
                     <h2 className="mb-3 text-xl font-semibold">Let&apos;s Build Together</h2>
                     <p className="mb-4 text-foreground-muted">
                         I am deeply curious about <strong className="text-foreground">Web3, </strong>
                         <strong className="text-foreground">Macro, </strong> and{" "}
                         <strong className="text-foreground">Bitcoin economics</strong>.
+                    </p>
+                    <p className="text-sm text-foreground-muted">
+                        Have feedback or just want to say hi? Catch me on{" "}
+                        <a
+                            href="https://x.com/0xsanketk"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="font-medium text-foreground underline decoration-accent/50 underline-offset-4 transition-colors hover:text-accent hover:decoration-accent"
+                        >
+                            X
+                        </a>
+                        .
                     </p>
                     {/* <p className="mb-6 text-sm text-foreground-muted">
                         If you&apos;re looking for a developer who can advocate for complex tech
