@@ -57,7 +57,7 @@ export function Footer({ className }: FooterProps) {
                         target="_blank"
                         rel="noopener noreferrer"
                         className="hover:text-foreground transition-colors"
-                        aria-label="Twitter/X"
+                        aria-label="X (Twitter)"
                     >
                         <svg
                             className="h-5 w-5"

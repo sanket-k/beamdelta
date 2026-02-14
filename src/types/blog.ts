@@ -12,6 +12,14 @@ export interface BlogFrontmatter {
     tags: string[];
     featured?: boolean;
     image?: string;
+    social?: {
+        twitter?: string;
+        website?: string;
+    };
+    references?: Array<{
+        text: string;
+        url: string;
+    }>;
 }
 
 /** Complete blog post with content */

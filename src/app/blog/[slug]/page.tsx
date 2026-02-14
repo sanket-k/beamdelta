@@ -5,6 +5,7 @@ import remarkGfm from "remark-gfm";
 import { getPostBySlug, getAllPostSlugs } from "@/lib/blog";
 import { getMDXComponents } from "@/components/blog/mdx-components";
 import { BlogHeader } from "@/components/blog/blog-header";
+import { BlogReferences } from "@/components/blog/blog-references";
 import { ResponsiveLayout } from "@/components/layout/responsive-layout";
 
 interface PageProps {
@@ -85,6 +86,7 @@ export default async function BlogPostPage({ params }: PageProps) {
                     readingTime={post.readingTime}
                 />
                 <div className="prose-custom">{content}</div>
+                <BlogReferences references={post.frontmatter.references} />
             </article>
         </ResponsiveLayout>
     );

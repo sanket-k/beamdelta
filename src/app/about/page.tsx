@@ -1,7 +1,8 @@
 import { Metadata } from "next";
 import Image from "next/image";
 import { ResponsiveLayout } from "@/components/layout/responsive-layout";
-import { Github, Twitter, Linkedin, ExternalLink } from "lucide-react";
+import { cn } from "@/lib/utils";
+import { Github, Linkedin, ExternalLink } from "lucide-react";
 
 export const metadata: Metadata = {
     title: "About | BeamDelta",
@@ -21,9 +22,21 @@ const techStack = [
 
 const socialLinks = [
     { href: "https://github.com/sanket-k", label: "GitHub", icon: Github },
-    { href: "https://x.com/0xsanketk", label: "X / Twitter", icon: Twitter },
+    { href: "https://x.com/0xsanketk", label: "X (Twitter)", icon: XIcon },
     { href: "https://www.linkedin.com/in/sanket-k/", label: "LinkedIn", icon: Linkedin },
 ];
+
+function XIcon({ className }: { className?: string }) {
+    return (
+        <svg
+            viewBox="0 0 24 24"
+            aria-hidden="true"
+            className={cn("fill-current", className)}
+        >
+            <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+        </svg>
+    )
+}
 
 export default function AboutPage() {
     return (
