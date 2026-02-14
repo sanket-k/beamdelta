@@ -16,7 +16,7 @@ export function Providers({ children }: ProvidersProps) {
     return (
         <ThemeProvider
             attribute="class"
-            defaultTheme="dark"
+            defaultTheme="light" // default theme -> change to dark if you want dark mode by default
             enableSystem
             disableTransitionOnChange
         >
