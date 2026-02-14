@@ -4,7 +4,7 @@ import { ShineButton } from "@/components/home/shine-button";
 import { BentoGrid } from "@/components/home/bento-grid";
 import { BentoCard } from "@/components/home/bento-card";
 import { LiveMiniChart } from "@/components/home/live-mini-chart";
-import { SocialFooter } from "@/components/home/social-footer";
+
 
 export default function Home() {
   return (
@@ -105,7 +105,7 @@ export default function Home() {
         </BentoGrid>
 
         {/* Social Conversion Footer */}
-        {/* <SocialFooter /> */}
+
       </main>
     </ResponsiveLayout>
   );

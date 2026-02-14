@@ -1,5 +1,6 @@
 import { type ReactNode } from "react";
 import { MobileBottomBar } from "@/components/navigation/mobile-bottom-bar";
+import { SocialFooter } from "@/components/home/social-footer";
 import { MobileHeader } from "@/components/navigation/mobile-header";
 import { DesktopTopNav } from "@/components/navigation/desktop-top-nav";
 import { DesktopSidebar } from "@/components/navigation/desktop-sidebar";
@@ -51,6 +52,7 @@ export function ResponsiveLayout({
                     )}
                 >
                     {children}
+                    <SocialFooter />
                 </main>
             </div>
 
