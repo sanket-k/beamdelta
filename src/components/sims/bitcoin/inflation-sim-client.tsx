@@ -195,7 +195,7 @@ export function InflationSimClient() {
                     />
                     <MetricCard
                         label="Years Simulated"
-                        value={params.maxBlocks / BLOCKS_PER_YEAR}
+                        value={Number((params.maxBlocks / BLOCKS_PER_YEAR).toFixed(1))}
                         format="number"
                     />
                 </div>
